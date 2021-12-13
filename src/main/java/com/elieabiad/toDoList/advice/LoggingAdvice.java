@@ -18,11 +18,9 @@ public class LoggingAdvice {
 
     Logger log = LoggerFactory.getLogger(LoggingAdvice.class);
 
-<<<<<<< ours
-=======
-    @Pointcut(value="execution(* com.elieabiad.toDoList.controller.*.*(..))")  //https://www.youtube.com/watch?v=RVvKPP5HyaA&t=11s 13:30
->>>>>>> theirs
+
     @Pointcut(value="execution(* com.elieabiad.toDoList.*.*.*(..))")  //https://www.youtube.com/watch?v=RVvKPP5HyaA&t=11s 13:30
+
     public void myPointcut(){
 
     }
