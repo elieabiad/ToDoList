@@ -17,7 +17,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .anyRequest().permitAll();
+                .anyRequest().permitAll();//disabled csrf because when it was enabled I couldn't send put delete create requests
+        http.headers().frameOptions().disable();//disabled headers to connect to H2 console
     }
     @Bean
     @Override
