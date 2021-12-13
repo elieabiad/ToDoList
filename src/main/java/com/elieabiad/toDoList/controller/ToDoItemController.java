@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,7 +23,7 @@ public class ToDoItemController {
     }
     @PostMapping
     // DTO = data transfer object
-    public ResponseEntity<ToDoItemDto> addToDoItem(@RequestBody final ToDoItemDto toDoItemDto){
+    public ResponseEntity<ToDoItemDto> addToDoItem(@Valid @RequestBody final ToDoItemDto toDoItemDto){
         ToDoItem toDoItem = toDoItemService.addToDoItem(ToDoItem.from(toDoItemDto));
         return new ResponseEntity<>(ToDoItemDto.from(toDoItem), HttpStatus.OK);
     }
@@ -45,7 +46,7 @@ public class ToDoItemController {
     }
     @PutMapping(value = "{id}")
     public ResponseEntity<ToDoItemDto> editToDoItem(@PathVariable final Long id,
-                                                    @RequestBody final ToDoItemDto toDoItemDto){
+                                                    @Valid @RequestBody final ToDoItemDto toDoItemDto){
         ToDoItem editedToDoItem = toDoItemService.editToDoItem(id,ToDoItem.from(toDoItemDto));
         return new ResponseEntity<>(ToDoItemDto.from(editedToDoItem), HttpStatus.OK);
     }
