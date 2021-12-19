@@ -1,3 +1,4 @@
+/*
 package com.elieabiad.toDoList.advice;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -11,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 
-//blablabla
+
 @Aspect
 @Component
 public class LoggingAdvice {
@@ -39,3 +40,4 @@ public class LoggingAdvice {
         return object;
     }
 }
+*/
